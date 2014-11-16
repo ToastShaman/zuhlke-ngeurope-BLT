@@ -11,7 +11,7 @@ var bespoke = require('bespoke'),
 bespoke.from('article', [
   ngeuropeBlt(),
   keys(),
-  bullets('li, .bullet'),
+  
   scale(),
   hash(),
   progress()
