@@ -1,0 +1,121 @@
+// Bespoke Classes: https://github.com/markdalgleish/bespoke-classes
+// Stylus: http://learnboost.github.io/stylus
+
+@import 'normalizecss/normalize.css'
+
+$sans-serif = Roboto, sans-serif
+$progress-bar-color = #F50057
+$bespoke-slide-background = #EEEEEE
+
+.bespoke-parent
+  text-size-adjust: auto
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+  font-family: $sans-serif
+  background: $bespoke-slide-background
+
+.bespoke-scale-parent
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  pointer-events: none
+  .bespoke-active
+    pointer-events: auto
+
+.bespoke-slide
+  border: 1px dottted orange
+  transition: opacity .2s ease
+  width: 720px
+  height: 480px
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-left: -(@width / 2)
+  margin-top: -(@height / 2)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.bespoke-active
+  transition-delay: .2s
+
+.bespoke-inactive
+  opacity: 0
+  pointer-events: none
+
+.bespoke-bullet-inactive
+  opacity: 0
+  pointer-events: none
+
+.bespoke-backdrop
+  transition: opacity 1s ease
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0
+  &-active
+    opacity: 1
+
+.bespoke-backdrop-active
+  opacity: 1
+
+.bespoke-progress-parent
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: .3vw
+
+.bespoke-progress-bar
+  position: absolute
+  height: 100%
+  background: $progress-bar-color
+  transition: width .3s ease
+
+.emphatic
+  background: #111
+
+.emphatic-text
+  color: white
+
+strong
+  font-weight: 400
+
+h1 strong
+  font-weight: 600
+
+h1, h2, h3, p, li
+  padding-left: 20px
+  padding-right: 20px
+
+h1, h2, h3, p, li, pre
+  font-weight: 200
+
+h1
+  font-family: $serif
+  color: #1976D2
+
+h1
+  margin: 0.17em 0
+
+h2
+  font-family: $sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 1.1em
+  margin: 0.1em 0
+
+h3
+  font-style: normal
+  font-size: .6em
+  margin: 1.1em 0
+
