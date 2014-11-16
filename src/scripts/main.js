@@ -2,25 +2,19 @@
 var bespoke = require('bespoke'),
   ngeuropeBlt = require('../../bespoke-theme-ngeurope-blt/dist/bespoke-theme-ngeurope-blt.js'),
   keys = require('bespoke-keys'),
-  touch = require('bespoke-touch'),
   bullets = require('bespoke-bullets'),
-  backdrop = require('bespoke-backdrop'),
   scale = require('bespoke-scale'),
   hash = require('bespoke-hash'),
-  progress = require('bespoke-progress'),
-  forms = require('bespoke-forms');
+  progress = require('bespoke-progress');
 
 // Bespoke.js
 bespoke.from('article', [
   ngeuropeBlt(),
   keys(),
-  touch(),
   bullets('li, .bullet'),
-  backdrop(),
   scale(),
   hash(),
-  progress(),
-  forms()
+  progress()
 ]);
 
 // Prism syntax highlighting

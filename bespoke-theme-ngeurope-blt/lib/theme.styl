@@ -3,10 +3,6 @@
 
 @import 'normalizecss/normalize.css'
 
-$sans-serif = Roboto, sans-serif
-$progress-bar-color = #F50057
-$bespoke-slide-background = #EEEEEE
-
 .bespoke-parent
   text-size-adjust: auto
   position: absolute
@@ -15,24 +11,18 @@ $bespoke-slide-background = #EEEEEE
   right: 0
   bottom: 0
   overflow: hidden
-  font-family: $sans-serif
-  background: $bespoke-slide-background
+  background: #EEEEEE
 
-.bespoke-scale-parent
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  pointer-events: none
-  .bespoke-active
-    pointer-events: auto
+  font-family: Roboto, sans-serif
+  font-wight: 400
+  font-size: 24px
+  line-height: 36px
 
 .bespoke-slide
   border: 1px dottted orange
   transition: opacity .2s ease
-  width: 720px
-  height: 480px
+  width: 960px
+  height: 700px
   position: absolute
   top: 50%
   left: 50%
@@ -54,20 +44,6 @@ $bespoke-slide-background = #EEEEEE
   opacity: 0
   pointer-events: none
 
-.bespoke-backdrop
-  transition: opacity 1s ease
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  opacity: 0
-  &-active
-    opacity: 1
-
-.bespoke-backdrop-active
-  opacity: 1
-
 .bespoke-progress-parent
   position: absolute
   top: 0
@@ -78,44 +54,35 @@ $bespoke-slide-background = #EEEEEE
 .bespoke-progress-bar
   position: absolute
   height: 100%
-  background: $progress-bar-color
+  background: #F50057
   transition: width .3s ease
 
-.emphatic
-  background: #111
+h1
+  font-size: 44px
+  font-weight: 700
+  color: #FF1744
 
-.emphatic-text
-  color: white
-
-strong
+h2 
+  margin-top: 0px
+  font-size: 34px
+  line-height: 28px
   font-weight: 400
+  color: #FF1744
 
-h1 strong
-  font-weight: 600
+h3 
+  margin-top: 0px
+  font-size: 24px
+  line-height: 36px
+  font-weight: 700
+  color: #757575  
 
-h1, h2, h3, p, li
-  padding-left: 20px
-  padding-right: 20px
+a 
+  text-decoration: none
+  border-bottom:2px dotted
+  color: #FF1744
 
-h1, h2, h3, p, li, pre
-  font-weight: 200
-
-h1
-  font-family: $serif
-  color: #1976D2
-
-h1
-  margin: 0.17em 0
-
-h2
-  font-family: $sans-serif
+code
+  font-family: prestige elite std, consolas, courier new, monospace !important
   font-style: normal
-  font-weight: normal
-  font-size: 1.1em
-  margin: 0.1em 0
-
-h3
-  font-style: normal
-  font-size: .6em
-  margin: 1.1em 0
-
+  font-weight: 200 !important
+  text-align: left
