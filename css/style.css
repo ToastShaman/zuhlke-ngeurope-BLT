@@ -47,7 +47,8 @@ body {
     color: rgba(0, 0, 0, 0.2);
 }
 .bespoke-slide a {
-    color: rgb(3, 179, 255);
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
 }
 .bespoke-slide pre strong {
     color: white;
