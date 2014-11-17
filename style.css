@@ -1,0 +1,62 @@
+body {
+	color: #fff;
+	background: #333;
+}
+
+.bespoke-slide h1 {
+	position: absolute;
+	font-weight: 300;
+	font-size: 4.4em;
+	line-height: 1;
+	letter-spacing: 6px;
+	margin: 0;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	word-spacing: -0.3em;
+}
+
+.bespoke-slide h1 span {
+	font-family: 'Satisfy', serif;
+	font-weight: 400;
+	font-size: 40%;
+	text-transform: none;
+	word-spacing: 0;
+	letter-spacing: 0;
+	display: block;
+	opacity: 0.4;
+}
+
+.bespoke-slide h2 {
+	position: absolute;
+	font-weight: 400;
+	font-size: 3.4em;
+	margin: 0;
+	top: 40px;
+}
+
+.bespoke-slide h1 strong {
+	color: rgba(0,0,0,0.1);
+}
+
+.bespoke-slide a {
+	color: rgb(3, 179, 255);
+}
+
+.bespoke-slide pre strong {
+  color: white;
+}
+
+pre {
+	padding: 12px !important;
+	font-size: 18px;
+}
+
+.backdrop-color-1 { background: #0ac2d2; }
+.backdrop-color-2 { background: #7bb7fa; }
+.backdrop-color-3 { background: #60d7a9; }
+.backdrop-color-4 { background: #fdc162; }
+.backdrop-color-5 { background: #fd6a62; }
+.backdrop-color-6 { background: #f68dbb; }
+.backdrop-color-7 { background: #333; }
