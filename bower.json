@@ -9,6 +9,7 @@
     "bespoke-keys": "~1.0.0",
     "prismjs": "*",
     "bespoke-theme-cube": "~2.0.0",
-    "bespoke-backdrop": "~1.0.0"
+    "bespoke-backdrop": "~1.0.0",
+    "font-awesome": "~4.2.0"
   }
 }
