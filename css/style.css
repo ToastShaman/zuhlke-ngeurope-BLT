@@ -3,12 +3,10 @@ body {
     background: #333;
 }
 .bespoke-slide h1 {
-    position: absolute;
     font-weight: 300;
     font-size: 42px;
     letter-spacing: 6px;
     margin: 0;
-    top: 40%;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
@@ -31,8 +29,22 @@ body {
     margin: 0;
     top: 40px;
 }
+.bespoke-slide h3 {
+    position: absolute;
+    font-weight: 400;
+    margin: 0;
+    top: 340px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #606060;
+}
 .bespoke-slide h1 strong {
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.2);
+}
+.bespoke-slide h2 strong {
+    color: rgba(0, 0, 0, 0.2);
 }
 .bespoke-slide a {
     color: rgb(3, 179, 255);
