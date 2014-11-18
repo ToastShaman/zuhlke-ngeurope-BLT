@@ -6,7 +6,7 @@ body {
     font-weight: 300;
     font-size: 42px;
     letter-spacing: 6px;
-    margin: 0;
+    margin: 0px;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
@@ -26,8 +26,9 @@ body {
     position: absolute;
     font-weight: 400;
     font-size: 36px;
-    margin: 0;
+    margin: 0px;
     top: 40px;
+    left: 30px;
 }
 .bespoke-slide h3 {
     position: absolute;

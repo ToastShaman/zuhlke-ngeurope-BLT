@@ -12,6 +12,7 @@
     "bespoke-backdrop": "~1.0.0",
     "font-awesome": "~4.2.0",
     "bespoke-touch": "~1.0.0",
-    "bespoke-hash": "~1.0.0"
+    "bespoke-hash": "~1.0.0",
+    "modernizr": "~2.8.3"
   }
 }
