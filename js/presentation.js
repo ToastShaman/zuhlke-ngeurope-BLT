@@ -13,6 +13,16 @@ var keyboard = function() {
     }
 
     return function(deck) {
+        document.addEventListener('mousedown', function(e) {
+            if (e.which == 1) { // Left? Mouse
+                deck.next();
+            }
+
+            // if (e.which == 3) { // Right? Mouse
+            //     deck.prev();
+            // }
+        });
+
         document.addEventListener('keydown', function(e) {
 
             if (e.which == 80) { // P
@@ -24,7 +34,7 @@ var keyboard = function() {
             }
 
             if (e.which == 70) { // F
-            	launchIntoFullscreen(document.documentElement);
+                launchIntoFullscreen(document.documentElement);
             }
         });
     };
