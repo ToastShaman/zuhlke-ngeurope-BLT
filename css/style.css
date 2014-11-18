@@ -61,6 +61,15 @@ pre {
 ul li {
     text-align: left;
 }
+
+.software_patterns__list li {
+    padding-top: 20px;
+}
+
+.software_patterns__list li i {
+    padding-right: 10px;
+}
+
 body > article > div.backdrop-color.bespoke-backdrop:nth-child(6n+1) {
     background: #0ac2d2;
 }

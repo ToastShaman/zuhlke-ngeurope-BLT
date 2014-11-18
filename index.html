@@ -67,6 +67,17 @@
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Angular 1.3: <strong>Performance Optimisations</strong></h2>
+            <pre><code class="language-javascript">// TODO:
+$compileProvider.debugInfoEnabled(false);
+
+// only trigger one digest even if there are multiple HTTP requests received in a short amount of time
+$httpProvider.useApplyAsync(true);</code></pre>
+        <pre><code class="language-markup">&lt;!-- Use One Time Binding if the value does not to be changed subsequently --&gt;
+&lt;span ng-bind=&quot;::user.lastName&quot;&gt;&lt;/span&gt;
+
+&lt;!-- Use ng-bind instead of {{var}} because it uses less memory --&gt;
+&lt;span ng-bind=&quot;order.amount&quot;&gt;&lt;/span&gt;
+</code></pre>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
@@ -76,12 +87,21 @@
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Anti-Patterns</strong></h2>
+            <p>
+                <ul class="fa-ul software_patterns__list">
+                    <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers:</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
+                    <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom:</strong><br>Putting all of the code to drive into the link function.</li>
+                    <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State:</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
+                    <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency:</strong><br>Depending on one or more properties of the prototype chain to (magically) be present (from a top controller).</li>
+                </ul>
+            </p>
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Active Record Pattern</strong></h2>
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
+            <pre><code class="language-javascript">// TODO:</pre></code>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
