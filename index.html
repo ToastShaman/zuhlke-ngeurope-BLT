@@ -55,11 +55,18 @@
 &lt;input type=&quot;text&quot; name=&quot;userName&quot;
     ng-model=&quot;user.name&quot;
     ng-model-options=&quot;{ debounce: 1000 }&quot; /&gt;
-&lt;button ng-click=&quot;userForm.userName.$rollbackViewValue(); user.name=''&quot;&gt;Clear&lt;/button&gt;&lt;br /&gt;</code></pre>
+&lt;button ng-click=&quot;userForm.userName.$rollbackViewValue(); user.name=''&quot;&gt;Clear&lt;/button&gt;&lt;br /&gt;
+
+&lt;!-- ngMessages --&gt;
+&lt;div ng-messages=&quot;myForm.myName.$error&quot; style=&quot;color:maroon&quot;&gt;
+    &lt;div ng-message=&quot;required&quot;&gt;You did not enter a field&lt;/div&gt;
+    &lt;div ng-message=&quot;minlength&quot;&gt;Your field is too short&lt;/div&gt;
+    &lt;div ng-message=&quot;maxlength&quot;&gt;Your field is too long&lt;/div&gt;
+&lt;/div&gt;</code></pre>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
-            <h1>Hello World #4</h1>
+            <h2>Angular 1.3: <strong>ngAria</strong></h2>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
