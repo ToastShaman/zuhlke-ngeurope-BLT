@@ -66,14 +66,29 @@
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
-            <h2>Angular 1.3: <strong>Performance Optimisations</strong></h2>
-            <pre><code class="language-javascript">// TODO:
-$compileProvider.debugInfoEnabled(false);
+            <h2>Angular 1.3: <strong>In Production</strong></h2>
 
-// only trigger one digest even if there are multiple HTTP requests received in a short amount of time
+            <p class="medium-text-width">
+                Where the compiler has created a new scope, the scope and either <span class="inline-code">ng-scope</span> or 
+                <span class="inline-code">ng-isolated-scope</span> CSS class are attached to the corresponding element. 
+                These scope references can then be accessed via <span class="inline-code">element.scope()</span> and <span class="inline-code">element.isolateScope()</span>. 
+                Tools like Protractor and Batarang need this information to run, but you can disable this in production for a significant performance boost.
+            </p>
+
+            <p class="medium-text-width">
+                Configure <span class="inline-code">$http</span> service to combine processing of multiple http responses received at around the same time via 
+                <span class="inline-code">$rootScope.$applyAsync</span>.
+            </p>
+
+            <pre><code class="language-javascript">$compileProvider.debugInfoEnabled(false);
 $httpProvider.useApplyAsync(true);</code></pre>
-        <pre><code class="language-markup">&lt;!-- Use One Time Binding if the value does not to be changed subsequently --&gt;
-&lt;span ng-bind=&quot;::user.lastName&quot;&gt;&lt;/span&gt;
+            
+            <p class="medium-text-width">
+                An expression that starts with <span class="inline-code">::</span> is considered a one-time expression. One-time expressions will stop 
+                recalculating once they are stable, which happens after the first digest if the expression result is a non-undefined value.
+            </p>
+
+            <pre><code class="language-markup">&lt;span ng-bind=&quot;::user.lastName&quot;&gt;&lt;/span&gt;
 
 &lt;!-- Use ng-bind instead of {{var}} because it uses less memory --&gt;
 &lt;span ng-bind=&quot;order.amount&quot;&gt;&lt;/span&gt;

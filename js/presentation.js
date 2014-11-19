@@ -14,9 +14,9 @@ var keyboard = function() {
 
     return function(deck) {
         document.addEventListener('mousedown', function(e) {
-            if (e.which == 1) { // Left? Mouse
-                deck.next();
-            }
+            // if (e.which == 1) { // Left? Mouse
+            //     deck.next();
+            // }
 
             // if (e.which == 3) { // Right? Mouse
             //     deck.prev();

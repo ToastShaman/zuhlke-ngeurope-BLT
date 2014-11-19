@@ -18,7 +18,7 @@ p.weight2 {
    font-weight: 100;
    font-style: normal;
    font-size: 36px;
-   line-height: 30px;
+   line-height: 36px;
 }
 
 p.weight3 {
@@ -130,7 +130,7 @@ h1 {
 }
 
 p {
-   font-size: 17px;
+   font-size: 24px;
    line-height: 26px;
    margin-bottom: 35px;
 }
