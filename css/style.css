@@ -96,3 +96,27 @@ body > article > div.backdrop-color.bespoke-backdrop:nth-child(6n+6) {
 body > article > div.backdrop-color.bespoke-backdrop:last-child() {
     background: #333;
 }
+.bespoke-before {
+    /*Book Flip*/
+    -webkit-transform: translateX(100 px) translateX(-320 px) rotateY(-90 deg) translateX(-320 px);
+    transform: translateX(100 px) translateX(-320 px) rotateY(-90 deg) translateX(-320 px);
+ 
+    /*Slide In*/
+    /*-webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);*/
+
+    /*-webkit-transform: none;
+    transform: none;*/
+}
+.bespoke-after {
+    /*Book Flip*/
+    -webkit-transform: translateX(-100 px) translateX(320 px) rotateY(90 deg) translateX(320 px);
+    transform: translateX(-100 px) translateX(320 px) rotateY(90 deg) translateX(320 px);
+ 
+    /*Slide In*/
+    /*-webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);*/
+
+    /*-webkit-transform: none;
+    transform: none;*/
+}
