@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="bower_components/prismjs/prism.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/animate-css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="icon" href="img/dot-circle-o.png">
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -44,7 +42,7 @@
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
-            <h2>Angular 1.3: <strong>ngModelOptions</strong></h2>
+            <h2>Angular 1.3: <strong>ngModelOptions / ngMessages</strong></h2>
             <pre><code class="language-markup">&lt;!-- One Time Binding --&gt;
 &lt;span ng-bind=&quot;::user.lastName&quot;&gt;&lt;/span&gt;
 
@@ -119,7 +117,61 @@ $httpProvider.useApplyAsync(true);</code></pre>
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Active Record Pattern</strong></h2>
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
-            <pre><code class="language-javascript">// TODO:</pre></code>
+            <pre><code class="language-javascript">// order.factory.js
+function OrderFactory($http) {
+
+    function Order(order) {
+        angular.extend(this, order || {});
+        this.toppings = this.toppings || {};
+    }
+
+    Order.prototype.addTopping = function(topping) {
+        this.toppings.push(topping);
+    };
+
+    Order.prototype.submit = function() {
+        return $http.post('http://pizza.example.com/orders', this).then(function(response) {
+            return response.data;
+        });
+    };
+
+    Order.prototype.calculatePrice = function() {
+        var total = 0;
+        angular.forEach(this.toppings, function(topping) {
+            total += topping.price;
+        });
+        return total;
+    };
+
+    Order.getById = function(orderId) {
+        return $http.get('http://pizza.example.com/orders/' + orderId).then(function(response) {
+            return new Order(response.data);
+        });
+    };
+}
+angular.module('pizza-app').factory('OrderFactory', OrderFactory);</pre></code>
+        </section>
+
+        <section data-bespoke-backdrop="backdrop-color">
+            <h2>Software Patterns in Angular: <strong>Active Record Pattern</strong></h2>
+            <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
+            <pre><code class="language-javascript">// order.controller.js
+function OrderController(Order) {
+    var self = this;
+
+    self.order = new Order();
+
+    self.addTopping = function(topping) {
+        order.addTopping(topping);
+    };
+
+    self.placeOrder = function(order) {
+        order.submit().then(function(savedOrder) {
+            console.log(savedOrder);
+        });
+    };
+}
+angular.module('pizza-app').controller('OrderController', OrderController);</pre></code>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
@@ -154,8 +206,10 @@ $httpProvider.useApplyAsync(true);</code></pre>
 
     </article>
 
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/bespoke.js/dist/bespoke.min.js"></script>
+    <script src="bower_components/bespoke-classes/dist/bespoke-classes.min.js"></script>
     <script src="bower_components/bespoke-hash/dist/bespoke-hash.min.js"></script>
     <script src="bower_components/bespoke-touch/dist/bespoke-touch.min.js"></script>
     <script src="bower_components/bespoke-keys/dist/bespoke-keys.min.js"></script>
