@@ -24,7 +24,6 @@ var keyboard = function() {
         });
 
         document.addEventListener('keydown', function(e) {
-
             if (e.which == 80) { // P
                 deck.prev();
             }
