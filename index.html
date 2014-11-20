@@ -103,14 +103,14 @@ $httpProvider.useApplyAsync(true);</code></pre>
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Anti-Patterns</strong></h2>
-            <p>
-                <ul class="fa-ul software_patterns__list">
-                    <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers:</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
-                    <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom:</strong><br>Putting all of the code to drive into the link function.</li>
-                    <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State:</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
-                    <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency:</strong><br>Depending on one or more properties of the prototype chain to (magically) be present (from a top controller).</li>
-                </ul>
-            </p>
+         
+            <ul class="fa-ul software_patterns__list">
+                <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers:</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom:</strong><br>Putting all of the code to drive the directive into the link function.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State:</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency:</strong><br>Depending on one or more properties of the prototype chain to (magically) be present (from a top controller).</li>
+            </ul>
+     
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
         </section>
 
@@ -131,16 +131,8 @@ function OrderFactory($http) {
 
     Order.prototype.submit = function() {
         return $http.post('http://pizza.example.com/orders', this).then(function(response) {
-            return response.data;
+            return new Order(response.data);
         });
-    };
-
-    Order.prototype.calculatePrice = function() {
-        var total = 0;
-        angular.forEach(this.toppings, function(topping) {
-            total += topping.price;
-        });
-        return total;
     };
 
     Order.getById = function(orderId) {
@@ -148,6 +140,7 @@ function OrderFactory($http) {
             return new Order(response.data);
         });
     };
+    return Order;
 }
 angular.module('pizza-app').factory('OrderFactory', OrderFactory);</pre></code>
         </section>
@@ -193,6 +186,51 @@ angular.module('pizza-app').controller('OrderController', OrderController);</pre
         <section data-bespoke-backdrop="backdrop-color">
             <h2>ES6 and Google Traceur</h2>
             <div class="footnote">http://arv.github.io/ngeurope/#/</div>
+            <pre><code class="language-javascript">// home.controller.es6.js
+class Baconator {
+    constructor($http) {
+        this.$http = $http;
+        this.url = 'https://baconator-bacon-ipsum.p.mashape.com/?type=all-meat';
+        this.headers = { X-Mashape-Key: 'x' };
+    }
+
+    baconize(paras=25, sentences=15) {
+        var headers = this.headers;
+        var params = {paras, sentences};
+        return this.$http.get(this.url, {headers, params});
+    }
+}
+
+class ToDoItem {
+    constructor(who, what, notes) {
+        this.who = who;
+        this.what = what;
+        this.notes = notes;
+        this.done_ = false;
+    }
+
+    markAsDone() { this.done_ = true; }
+    get isDone() { return this.done_; }
+}</pre></code>
+        </section>
+
+        <section data-bespoke-backdrop="backdrop-color">
+            <h2>ES6 and Google Traceur</h2>
+            <div class="footnote">http://arv.github.io/ngeurope/#/</div>
+            <pre><code class="language-javascript">// home.controller.es6.js
+class HomeController {
+    constructor(Baconator) {
+        this.todos = [];
+        Baconator.baconize().success(data => {
+            data.forEach(item => {
+                this.todos.push(new ToDoItem(item.who, item.what, item.notes));
+            });
+        });
+    }
+}
+
+angular.module('ngeurope').service('Baconator', Baconator);
+angular.module('ngeurope').controller('HomeController', HomeController);</pre></code>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
