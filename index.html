@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bower_components/prismjs/prism.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/animate-css/animate.css">
+    <link rel="stylesheet" href="css/bespoke-theme-cube.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="icon" href="img/dot-circle-o.png">
@@ -72,7 +73,6 @@
             <p class="medium-text-width">
                 Where the compiler has created a new scope, the scope and either <span class="inline-code">ng-scope</span> or 
                 <span class="inline-code">ng-isolated-scope</span> CSS class are attached to the corresponding element. 
-                These scope references can then be accessed via <span class="inline-code">element.scope()</span> and <span class="inline-code">element.isolateScope()</span>. 
                 Tools like Protractor and Batarang need this information to run, but you can disable this in production for a significant performance boost.
             </p>
 
@@ -99,16 +99,37 @@ $httpProvider.useApplyAsync(true);</code></pre>
         <section data-bespoke-backdrop="backdrop-color">
             <h2>ngAria: <strong>Accessible Rich Internet Applications</strong></h2>
             <div class="footnote">http://marcysutton.github.io/angular-a11y/#/</div>
+            <p class="medium-text-width">
+                The goal of ngAria is to improve Angular's default accessibility by enabling common ARIA attributes that convey state or semantic information for assistive technologies used by persons with disabilities.
+                Most of what ngAria does is only visible "under the hood". 
+            </p>
+
+            <pre><code class="language-markup">&lt;!-- Roles: What does this thing do? --&gt;
+&lt;div role=&quot;img&quot; style=&quot;background-image...&quot;&gt; 
+
+&lt;!-- States: The current condition of this particular thing --&gt;
+&lt;md-input-group aria-disabled=&quot;true&quot;&gt; 
+
+&lt;!-- Properties --&gt;
+&lt;md-checkbox aria-label=&quot;Unsubscribe&quot;&gt;
+
+&lt;!-- Do not put ng-clicks on div's --&gt;
+&lt;md-button role=&quot;button&quot; tabIndex=&quot;0&quot; ng-click=&quot;woohoo()&quot; ng-keypress=&quot;woohoo()&quot;&gt;</pre></code>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Anti-Patterns</strong></h2>
-         
-            <ul class="fa-ul software_patterns__list">
-                <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers:</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
-                <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom:</strong><br>Putting all of the code to drive the directive into the link function.</li>
-                <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State:</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
-                <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency:</strong><br>Depending on one or more properties of the prototype chain to (magically) be present (from a top controller).</li>
+       
+            <p>
+                All of the design techniques and pitfalls that have applied for 50 years still apply.<br>
+                Focus on writing good software rather than asking "Is this the Angular way?"
+            </p>
+
+            <ul class="fa-ul software_patterns__list medium-text-width">
+                <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom</strong><br>Putting all of the code to drive a complicated directive inside the link function.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
+                <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency</strong><br>Depending on one or more properties of the prototype chain to <br>(magically) be present. Avoid inheritance for controllers.</li>
             </ul>
      
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
@@ -170,6 +191,12 @@ angular.module('pizza-app').controller('OrderController', OrderController);</pre
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Angular Material: <strong>Material Design</strong></h2>
             <div class="footnote">https://www.youtube.com/watch?v=2qiyhkQVyxE</div>
+            <p class="medium-text-width">
+                Material design (codenamed quantum paper) is a design language developed by Google and announced at the Google I/O conference on June 25, 2014. 
+                Expanding upon the "card" motifs first seen in Google Now, it is a cleaner design with increased use of grid-based layouts, responsive animations 
+                and transitions, padding, and depth effects such as lighting and shadows. 
+            </p>
+            <iframe width="560" height="315" src="//www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
