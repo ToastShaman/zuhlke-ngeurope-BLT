@@ -207,6 +207,30 @@ angular.module('pizza-app').controller('OrderController', OrderController);</pre
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Angular 2.0: <strong>AtScript</strong></h2>
+
+            <p class="medium-text-width">
+                JavaScript, the de facto language of the browser, has a large, thriving community. However, it is missing some features 
+                which would make it much more manageable for large-scale application development. The goal of AtScript is to enhance the 
+                language with these missing features without infringing upon its current capabilities (Influenced by TypeScript and Dart).
+            </p>
+
+            <p class="medium-text-width">
+                <strong>AtScript = ES6 + Types + Annotations + Introspections;</strong>
+            </p>
+
+            <pre><code class="language-javascript">// AtScript
+class MyClass {
+  methodA(name:string):int {
+    var length:int = name.length;
+    return length;
+  }
+}
+
+@Component({selector: 'foo'})
+class MyComponent {
+  @Inject()
+  constructor(server:Server) {}
+}</code></pre>
             <div class="footnote">https://docs.google.com/presentation/d/1hr2IM-8G-0RzpB-WY8pLHvxqNggKPzUO0KvEv1IKPws/edit?pli=1#slide=id.p</div>
         </section>
 
