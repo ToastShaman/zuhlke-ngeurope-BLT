@@ -21,7 +21,7 @@
             <h1>The past, present and future of
                 <strong>AngularJS</strong>
             </h1>
-            <p class="pullquote">Lessons from ngEurope 2014<br>Kevin Denver (@ToastShaman)</p>
+            <p class="pullquote">Highlights from ngEurope 2014<br>Kevin Denver (@ToastShaman)</p>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
@@ -118,26 +118,42 @@ $httpProvider.useApplyAsync(true);</code></pre>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
-            <h2>Software Patterns in Angular: <strong>Anti-Patterns</strong></h2>
-       
-            <p>
+            <h2>Software Patterns in Angular: <strong>What are they?</strong></h2>
+            <ul class="fa-ul software_patterns__list medium-text-width">
+                <li><strong>Services & Factories: Injected Singletons: </strong></li>
+                <li><i class="fa fa-circle-thin"></i>Cache for application-level data</li>
+                <li><i class="fa fa-circle-thin"></i>Facade for browser and 3rd party APIs</li>
+                <li><i class="fa fa-circle-thin"></i>Factory for instantiating other objects</li>
+                <li><strong>Data Binding: </strong></li>
+                <li><i class="fa fa-circle-thin"></i>Data binding is an implementation of the traditional observer pattern</li>
+                <li><i class="fa fa-circle-thin"></i>Prevents thight coupling between independent parts of a complicated UI</li>
+                <li><i class="fa fa-circle-thin"></i>The best way for different pieces to communicate with each other is to be bound to the same data</li>
+                <li><strong>Inheritance for Services & Controllers: </strong></li>
+                <li><i class="fa fa-circle-thin"></i>Modify UI components behaviour by extending directive controllers</li>
+            </ul>
+            <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
+        </section>
+
+        <section data-bespoke-backdrop="backdrop-color">
+            <h2>Software Patterns in Angular: <strong>Anti-Patterns</strong></h2>       
+            <p class="medium-text-width">
                 All of the design techniques and pitfalls that have applied for 50 years still apply.<br>
                 Focus on writing good software rather than asking "Is this the Angular way?"
             </p>
-
             <ul class="fa-ul software_patterns__list medium-text-width">
                 <li><i class="fa fa-exclamation-circle"></i> <strong>War and Peace Controllers</strong><br>Extremely long controllers that cover several epic code stories and philosophical musing.</li>
                 <li><i class="fa fa-exclamation-circle"></i> <strong>Link Function of Doom</strong><br>Putting all of the code to drive a complicated directive inside the link function.</li>
                 <li><i class="fa fa-exclamation-circle"></i> <strong>“Forgot About Dialogs” Global State</strong><br>Using services to store “per-page” state and clearing upon route change.</li>
                 <li><i class="fa fa-exclamation-circle"></i> <strong>Magical Prototype Chain Dependency</strong><br>Depending on one or more properties of the prototype chain to <br>(magically) be present. Avoid inheritance for controllers.</li>
             </ul>
-     
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Active Record Pattern</strong></h2>
-            <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
+            <p class="medium-text-width">
+                Models are a good place to encapsulate common domain logic.
+            </p>
             <pre><code class="language-javascript">// order.factory.js
 function OrderFactory($http) {
 
@@ -164,6 +180,7 @@ function OrderFactory($http) {
     return Order;
 }
 angular.module('pizza-app').factory('OrderFactory', OrderFactory);</pre></code>
+        <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
@@ -236,7 +253,12 @@ class MyComponent {
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>ES6 and Google Traceur</h2>
-            <div class="footnote">http://arv.github.io/ngeurope/#/</div>
+            <p class="medium-text-width">
+                Traceur is a JavaScript.next-to-JavaScript-of-today compiler that allows you to use features from the future today. 
+                Traceur's goal is to inform the design of new JavaScript features which are only valuable if they allow you to write better code. 
+                Traceur allows you to try out new and proposed language features today, helping you say what you mean in your code 
+                while informing the standards process.
+            </p>
             <pre><code class="language-javascript">// home.controller.es6.js
 class Baconator {
     constructor($http) {
@@ -244,7 +266,6 @@ class Baconator {
         this.url = 'https://baconator-bacon-ipsum.p.mashape.com/?type=all-meat';
         this.headers = { X-Mashape-Key: 'x' };
     }
-
     baconize(paras=25, sentences=15) {
         var headers = this.headers;
         var params = {paras, sentences};
@@ -259,10 +280,10 @@ class ToDoItem {
         this.notes = notes;
         this.done_ = false;
     }
-
     markAsDone() { this.done_ = true; }
     get isDone() { return this.done_; }
 }</pre></code>
+        <div class="footnote">http://arv.github.io/ngeurope/#/</div>
         </section>
 
         <section data-bespoke-backdrop="backdrop-color">
