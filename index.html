@@ -185,6 +185,10 @@ angular.module('pizza-app').factory('OrderFactory', OrderFactory);</pre></code>
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>Software Patterns in Angular: <strong>Active Record Pattern</strong></h2>
+            <p class="medium-text-width">
+                Your controllers then become really slim and are only concerned with UI interactions and you can reuse the domain logic in 
+                different controllers.
+            </p>
             <div class="footnote">https://docs.google.com/presentation/d/1eOL6ZaT-WqqC5q5D_uwE2EJxKmdWmfmXkkD4T47iYHk/mobilepresent?slide=id.p</div>
             <pre><code class="language-javascript">// order.controller.js
 function OrderController(Order) {
@@ -288,6 +292,11 @@ class ToDoItem {
 
         <section data-bespoke-backdrop="backdrop-color">
             <h2>ES6 and Google Traceur</h2>
+            <p class="medium-text-width">
+                Until arrow functions, every new function defined its own this value (a new object in case of a constructor, 
+                undefined in strict mode function calls, the context object if the function is called as an "object method", etc.). 
+                This proved to be annoying with an object-oriented style of programming.
+            </p>
             <div class="footnote">http://arv.github.io/ngeurope/#/</div>
             <pre><code class="language-javascript">// home.controller.es6.js
 class HomeController {
