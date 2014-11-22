@@ -1,0 +1,22 @@
+{
+  "name": "bespoke-backdrop",
+  "version": "1.0.0",
+  "main": "./dist/bespoke-backdrop.js",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "bespoke.js": ">=1.0.0"
+  },
+  "homepage": "https://github.com/markdalgleish/bespoke-backdrop",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "bc138ee87282285330af05b75fd034740e8ab8f9"
+  },
+  "_source": "git://github.com/markdalgleish/bespoke-backdrop.git",
+  "_target": "~1.0.0",
+  "_originalSource": "bespoke-backdrop",
+  "_direct": true
+}

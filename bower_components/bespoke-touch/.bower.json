@@ -1,0 +1,19 @@
+{
+  "name": "bespoke-touch",
+  "version": "1.0.0",
+  "main": "./dist/bespoke-touch.js",
+  "dependencies": {
+    "bespoke.js": "^1.0.0"
+  },
+  "homepage": "https://github.com/markdalgleish/bespoke-touch",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "3e277a4cdc00dec9331769f00182fd6c65f92644"
+  },
+  "_source": "git://github.com/markdalgleish/bespoke-touch.git",
+  "_target": "~1.0.0",
+  "_originalSource": "bespoke-touch",
+  "_direct": true
+}

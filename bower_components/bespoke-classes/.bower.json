@@ -1,0 +1,22 @@
+{
+  "name": "bespoke-classes",
+  "version": "1.0.0",
+  "main": "./dist/bespoke-classes.js",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "bespoke.js": "^1.0.0"
+  },
+  "homepage": "https://github.com/markdalgleish/bespoke-classes",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "de16d2ed0eba0f1a48eeac6662a0921d90fb9bfd"
+  },
+  "_source": "git://github.com/markdalgleish/bespoke-classes.git",
+  "_target": "~1.0.0",
+  "_originalSource": "bespoke-classes",
+  "_direct": true
+}

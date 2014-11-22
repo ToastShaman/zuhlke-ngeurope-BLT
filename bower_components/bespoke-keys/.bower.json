@@ -1,0 +1,18 @@
+{
+  "name": "bespoke-keys",
+  "version": "1.0.0",
+  "main": "./dist/bespoke-keys.js",
+  "dependencies": {
+    "bespoke.js": "^1.0.0-beta"
+  },
+  "homepage": "https://github.com/markdalgleish/bespoke-keys",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "5d46fad2535631f4554950827e52cd5def15fd94"
+  },
+  "_source": "git://github.com/markdalgleish/bespoke-keys.git",
+  "_target": "~1.0.0",
+  "_originalSource": "bespoke-keys"
+}
